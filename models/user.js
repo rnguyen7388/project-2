@@ -7,10 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     username: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true
-      }
+      unique: true
     },
     // The password cannot be null
     password: {
@@ -40,5 +37,11 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
+
+  User.associate = function(models) {
+    User.hasMany(models.Post, {
+      onDelete: "cascade"
+    });
+  };
   return User;
 };
