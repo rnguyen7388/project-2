@@ -1,23 +1,33 @@
 /*eslint-disable*/
 module.exports = function(sequelize, DataTypes) {
-    let Forum = sequelize.define("Forum", {
+    let Post = sequelize.define("Post", {
       neighborhood: {
           type: DataTypes.STRING,
           allowNull: false
       },
-      post: {
+      title: {
           type: DataTypes.STRING,
           allowNull: false
       },
-      author: {
-          type: DataTypes.STRING,
-          allowNull: false
+      text: {
+        type: DataTypes.STRING,
+        allowNull: false
       },
       likes: {
         type: DataTypes.INTEGER,
         defaultValue: 0
       }
     });
-    return Forum;
+
+    Post.associate = function(models) {
+
+      Post.belongsTo(models.User, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+
+    return Post;
 };
 

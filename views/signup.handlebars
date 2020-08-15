@@ -11,7 +11,7 @@
         <form class="signup">
           <div class="form-group">
             <label for="exampleInputUsername">Username</label>
-            <input type="password" class="form-control" id="username-input" placeholder="Username">
+            <input type="text" class="form-control" id="username-input" placeholder="Username">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
@@ -22,10 +22,16 @@
             <input type="password" class="form-control" id="password-input" placeholder="Password">
           </div>
           <div class="form-group">
+            <label for="confirmPass">Confirm Password</label>
+            <input type="confirmPass" class="form-control" id="confirmPass-input" placeholder="Confirm Password">
+          </div>
+          <div class="form-group">
             <label for="exampleInputNeighborhood">Home Neighborhood</label>
             <select type="neighborhood" class="form-control" id="neighborhood-input" placeholder="Neighborhood">
               {{!-- need to have these come from an array --}}
-              <option value={{#each neighborhoods}}></option>
+              {{#each neighborhoods}}
+              <option value="{{this}}">{{this}}</option>
+              {{/each}}
             </select> 
           </div>
           <div style="display: none" id="alert" class="alert alert-danger" role="alert">

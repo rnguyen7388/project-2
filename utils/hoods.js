@@ -19,4 +19,4 @@ const neighborhoods = [
     "Wicker Park"
 ]
 
-Model.exports = neighborhoods;
+module.exports = neighborhoods;

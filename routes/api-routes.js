@@ -1,3 +1,4 @@
+/*eslint-disable*/
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
@@ -18,10 +19,7 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
-    db.User.create({
-      email: req.body.email,
-      password: req.body.password
-    })
+    db.User.create(req.body)
       .then(() => {
         res.redirect(307, "/api/login");
       })
@@ -49,5 +47,31 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+  });
+
+  // get posts by neighborhood
+  app.get("/api/neighborhood/:neighborhood", function(req, res) {
+    db.Post.findAll({
+      where: {
+        neighborhood: req.params.neighborhood
+      }
+    }).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  // Add a post
+  app.post("/api/post", function(req, res) {
+    console.log(req.user)
+    console.log("Post Data:");
+    console.log(req.body);
+
+    db.Post.create({
+      neighborhood: req.body.neighborhood,
+      title: req.body.title,
+      text: req.body.text,
+    }).then(function(results) {
+      res.end();
+    });
   });
 };
