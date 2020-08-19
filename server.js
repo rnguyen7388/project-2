@@ -1,7 +1,9 @@
-require('dotenv').config()
+require("dotenv").config()
 
 console.log(process.env.API_KEY)
 // Requiring necessary npm packages
+const sass = require("sass");
+const compiler = sass.renderSync({ file: "public/stylesheets/input.scss"});
 const express = require("express");
 const session = require("express-session");
 // Requiring passport as we've configured it

@@ -3,47 +3,202 @@ form.login {
   margin-top: 50px;
 }
 
-/* $blue: #0A2470; 
-$green: #1D8164;
-$darkgrey: #B4B4B4;
-$lightgrey: #E7E7E7;
-$displayFont: "Times New Roman", Times, serif;
-$typeFont: ;
-$width: 90%;
-$inline: inline-block;
-
 header {
-  h1 {
-    font-family: $displayFont
-    position: relative;
-    top: 50px;
-  }
-  h2 {
-    font-family: $typeFont
-  }
+  height: 95px;
+  width: 80% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.userSmall {
+  margin: 0;
+}
+
+.notify {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 100px;
+  display: inline-block;
+  margin: 0;
+  font-family: bodoni-urw, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.neighborhood {
+  display: inline-block;
+  font-size: 38px;
+  margin-left: 20px;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+#button {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+#changeCity {
+  border-radius: 30px;
+  background-color: transparent;
+  border: none;
+  color: #0a2470;
+  font-size: 18px;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+#userInfo {
+  display: inline;
+  float: right;
+  text-align: right;
+  font-family: bodoni-urw, serif;
+  font-weight: 400;
+  font-style: normal;
+  position: relative;
+  top: 50px;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 main {
-  background-color: $darkgrey
-  font-family: $typeFont
+  background-color: #e7e7e7;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .width {
-  width: $width
-  margin-left: auto
-  margin-right: auto
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .createPost {
   background-color: white;
-  height: 300px;
-  width: 40%
+  width: 50%;
+  border-radius: 10px;
+  padding-top: 10px;
+  filter: drop-shadow(0 0 0.25rem #d0d0d0);
+  text-align: right;
+}
+
+#newTitle {
+  display: block;
+  font-size: 20px;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  border: none;
+  border-bottom: 1px #e7e7e7 solid;
+  outline: none;
+}
+
+#newPost {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  border: none;
+  max-width: 95%;
+  outline: none;
+}
+
+#postBtn {
+  box-shadow: inset 0px 0px 15px 3px #23395e;
+  background-color: #0a2470;
+  border-radius: 17px;
+  border: 1px solid #1f2f47;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 6px 13px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+#postBtn :hover {
+  background: linear-gradient(to bottom, #415989 5%, #2e466e 100%);
+  background-color: #415989;
+}
+#postBtn:active {
+  position: relative;
+  top: 1px;
 }
 
 .forum {
-background-color: $lightgrey;
-  height: 300px;
-  width: 40%
+  background-color: #ffffff;
+  width: 50%;
+  border-radius: 10px;
+  margin-top: 30px;
+  filter: drop-shadow(0 0 0.25rem #d0d0d0);
 }
 
-*/
+.username {
+  font-family: bodoni-urw, serif;
+  font-weight: 400;
+  font-style: normal;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.title {
+  font-family: sofia-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 26px;
+  margin: 0;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.likeImg {
+  height: 20px;
+  filter: invert(100%);
+}
+
+.likeBtn {
+  background-color: transparent;
+  border: none;
+}
+
+.taskBar {
+  background-color: #0a2470;
+  color: white;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: right;
+}
+
+.post {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+footer {
+  text-align: center;
+  background-color: white;
+  border-top: #0a2470 2px solid;
+  color: black;
+}

@@ -1,40 +1,45 @@
-<header class = "width">
-    <h1>Notify</h1>
-    <h2>{{city}}</h2>
-    <p>@{{username}}</p>
-    <p>home: {{neighborhood}}</p>
+<header class="width">
+    <h1 class="notify">Notify</h1>
+    <h2 class="neighborhood">{{neighborhood}}</h2>
+    <section id="userInfo">
+        <p class = "userSmall">@{{username}}</p>
+        {{!-- current user ^ --}}
+        <p class = "userSmall">Home: {{neighborhood}}</p>
+    </section> 
 </header>
 <main>
-<section id = "cityInfo">
-    {{!-- neighborhood info --}}
-</section>
+    {{!-- <section id="cityInfo">
+    </section> --}}
+    <div id="button">
+        <button id="changeCity">Change Cities</button>
+    </div>
+    {{!-- create forum posts --}}
+    <div class="width createPost">
+        <input id="newTitle" class="width" placeholder="Subject"></input>
+        <textarea rows="3" class="width" id="newPost" placeholder="What would you like to tell "
+            {{this.neighborhood}}></textarea>
+        <button id="postBtn" type="submit">Post</button>
+    </div>
 
-{{!-- create forum posts --}}
-<div class = "width, createPost">
-<div>{{user}}</div>
-{{!-- current user^ --}}
-<input id = "newTitle" class = "title" placeholder="Subject"></input>
-<textarea rows = "4" id = "newPost"></textarea>
-<button id = "submitBtn"type = "submit">Post</button>
-</div>
-
-{{!-- post forum posts --}}
-<section class = "width forum">
-    {{#each post}}
-    <p class = "title">{{this.title}}</p>
-    <div class = "username">@{{this.user}}</div>
-    <div class = "post">{{this.text}}</div>
-    <div class = "likes">
-        {{!-- find image and add to files --}}
-        {{this.likes}} <img src="../../utils/imgs/like.png" alt="Like Icon"></div>
-    {{/each}}
-    {{#each user}}
-    {{#each text}}
-    {{#each title}}
-    {{#each likes}}
-    {{/each}}
-    {{/each}}
-    {{/each}}
-    {{/each}}
-</section>
+    {{!-- post forum posts --}}
+    <section class="width forum">
+        {{#each post}}
+        <p class="title">{{this.title}}</p>
+        <div class="username">@{{this.user}}</div>
+        <div class="post">{{this.text}}</div>
+        <div class="taskBar">
+            <div class="likes">
+                {{this.likes}}
+                <button class="likeBtn">
+                    <img src="/utils/imgs/like.png" alt="Like Icon" class="likeImg">
+                </button>
+            </div>
+        </div>
+        {{/each}}
+    </section>
 </main>
+<footer>
+    <small>All Rights Reserved © 2020</small>
+</footer>
+<script type="text/javascript" src="js/forum.js"></script>
+<script type="text/javascript" src="js/post.js"></script>

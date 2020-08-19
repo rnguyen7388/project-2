@@ -1,12 +1,14 @@
 /*eslint-disable*/
-$("#post-submit").on("click", function(event) {
+$("#postBtn").on("click", function(event) {
     event.preventDefault();
   
     // Make a newPost object
     let newPost = {
-      neighborhood: "hello",
-      post: $("#postData").val().trim(),
-      author: "hello"
+      neighborhood: user.neighborhood,
+      title: $("#newTitle").val().trim(),
+      text: $("#newPost").val().trim(),
+      author: user.username,
+      
     };
   
     console.log(newPost);
@@ -20,10 +22,9 @@ $("#post-submit").on("click", function(event) {
         row.addClass("posts");
   
         row.append("<p>" + newPost.author + " posted: </p>");
-        row.append("<p>" + newPost.post + "</p>");
+        row.append("<p>" + newPost.text + "</p>");
   
         $("#post-area").prepend(row);
-  
       });
   
     // Empty each input box by replacing the value with an empty string
@@ -34,20 +35,13 @@ $("#post-submit").on("click", function(event) {
   $.get("/api/allPosts", function(data) {
 
     if (data.length !== 0) {
-  
       for (var i = 0; i < data.length; i++) {
-  
         var row = $("<div>");
         row.addClass("posts");
-  
         row.append("<p>" + data[i].author + " posted: </p>");
         row.append("<p>" + data[i].post + "</p>");
-  
         $("#post-area").prepend(row);
-  
       }
-  
     }
-  
   });
   
