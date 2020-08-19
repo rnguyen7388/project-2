@@ -15,20 +15,9 @@ module.exports = function(app) {
     res.render("signup", { neighborhoods: hoods });
   });
 
-  app.get("/forum/:neighborhood", (req, res) => {
+  app.get("/forum", (req, res) => {
     if (req.user) {
-      db.Post.findAll({
-        where: {
-          neighborhood: req.params.neighborhood
-        }
-      }).then(neighborData => {
-        res.render("forum", {
-          city: req.user.neighborhood,
-          home: req.user.neighborhood,
-          post: neighborData,
-          username: req.user.username
-        });
-      });
+      res.render("forum", req.user);
     }
   });
 

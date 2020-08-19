@@ -3,6 +3,6 @@ $("path").click(function() {
 });
 
 $("#changeCity").click(function() {
-   = "/map";
+   window.locate = "/map";
   console.log("changeCity");
 });
