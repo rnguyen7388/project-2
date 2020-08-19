@@ -1,3 +1,4 @@
+let user;
 $(document).ready(() => {
   // Getting references to our form and inputs
   const loginForm = $("form.login");
@@ -28,8 +29,9 @@ $(document).ready(() => {
       email: email,
       password: password,
     })
-      .then(() => {
-        window.location.replace("/members");
+      .then(result => {
+        window.location.replace("/forum");
+        user = result;
         // If there's an error, log the error
       })
       .catch(err => {
