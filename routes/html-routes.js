@@ -17,6 +17,7 @@ module.exports = function(app) {
 
   app.get("/forum", (req, res) => {
     if (req.user) {
+      console.log(req.user)
       res.render("forum", req.user);
     }
   });
@@ -33,10 +34,12 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/forum", isAuthenticated, (req, res) => {
-    res.render("forum");
+    console.log(req.user)
+    res.render("forum", req.user);
   });
 
   app.get("/posts", (req, res) => {
+    console.log(req.user)
     res.render("forum");
   });
 

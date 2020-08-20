@@ -4,11 +4,11 @@ $("#postBtn").on("click", function(event) {
   
     // Make a newPost object
     let newPost = {
-      neighborhood: user.neighborhood,
+      neighborhood: $("#currentNeighborhood").text(),
       title: $("#newTitle").val().trim(),
       text: $("#newPost").val().trim(),
-      author: user.username,
-      
+      author: $("#currentUser").text(),
+      UserId: $("#userId").val()
     };
   
     console.log(newPost);

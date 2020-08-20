@@ -45,7 +45,7 @@ $(document).ready(() => {
       neighborhood: userData.neighborhood
     })
       .then(() => {
-        window.location.replace("/members");
+        window.location.replace("/forum");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);

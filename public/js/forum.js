@@ -1,8 +1,8 @@
 $(document).ready(() => {
-    let neighborhood = user.neighborhood;
+    let neighborhood = $("#currentNeighborhood").text();
     console.log(neighborhood);
 
-    $.get("/api/neighborhood/" + neighborhood).then(data => {
+    $.get("/api/neighborhood/" + neighborhood, function(data) {
         console.log(data);
     });
 });
