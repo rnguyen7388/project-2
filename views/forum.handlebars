@@ -1,8 +1,9 @@
 <header class="width">
     <h1 class="notify">Notify</h1>
-    <h2 class="neighborhood">{{neighborhood}}</h2>
+    <h2 id="currentNeighborhood" class="neighborhood">{{neighborhood}}</h2>
     <section id="userInfo">
-        <p class = "userSmall">@{{username}}</p>
+        <p id="currentUser" class = "userSmall">@{{username}}</p>
+        <input id="userId" type="hidden" value="{{id}}"/>
         {{!-- current user ^ --}}
         <p class = "userSmall">Home: {{neighborhood}}</p>
     </section> 
@@ -11,8 +12,8 @@
     {{!-- <section id="cityInfo">
     </section> --}}
     <div id="button">
-        <button id="changeCity">
-            <a href="/map">Change Cities</a></button>
+        <button id="changeCity"><a href="/map">Change Cities</a></button>
+
     </div>
     {{!-- create forum posts --}}
     <div class="width createPost">

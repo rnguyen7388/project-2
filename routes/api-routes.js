@@ -57,7 +57,7 @@ module.exports = function(app) {
         neighborhood: req.params.neighborhood
       }
     }).then(function(results) {
-      res.json(results);
+      res.json(results.data);
     });
   });
 
@@ -71,6 +71,7 @@ module.exports = function(app) {
       neighborhood: req.body.neighborhood,
       title: req.body.title,
       text: req.body.text,
+      UserId: req.body.UserId
     }).then(function(results) {
       res.end();
     });
