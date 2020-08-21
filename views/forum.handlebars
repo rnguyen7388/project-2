@@ -8,7 +8,7 @@
     <div class="width createPost">
         <input id="newTitle" class="width" placeholder="Subject"></input>
         <textarea rows="3" class="width" id="newPost" placeholder="What would you like to tell "
-            {{user.neighborhood}}></textarea>
+            {{current}}"?""></textarea>
         <button id="postBtn" type="submit">Post</button>
     </div>
 
@@ -46,5 +46,5 @@
 <footer>
     <small>All Rights Reserved © 2020</small>
 </footer>
-<script type="text/javascript" src="js/forum.js"></script>
-<script type="text/javascript" src="js/post.js"></script>
+{{!-- <script type="text/javascript" src="js/forum.js"></script> --}}
+<script type="text/javascript" src="/js/post.js"></script>

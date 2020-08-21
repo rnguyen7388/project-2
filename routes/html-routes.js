@@ -22,14 +22,13 @@ module.exports = function(app) {
     } else if(req.user) {
       searchedHood = req.user.neighborhood;
     }
+    console.log(searchedHood);
     if (req.user) {
-      console.log(req.user)
       db.Post.findAll({
         where: {
           neighborhood: searchedHood
         }
       }).then(function(results) {
-        console.log(results);
         res.render("forum", {user: req.user, posts: results, current: searchedHood});
       });
 
@@ -49,10 +48,10 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/forum", isAuthenticated, (req, res) => {
     console.log(req.user)
-    res.render("forum", req.user);
+    res.render("forum", {user:req.user});
   });
 
   app.get("/map", (req, res) => {
-    res.render("chicago");
+    res.render("chicago", {user: req.user});
   });
 };
