@@ -7,7 +7,6 @@ $("#postBtn").on("click", function(event) {
       neighborhood: $("#currentNeighborhood").text(),
       title: $("#newTitle").val().trim(),
       text: $("#newPost").val().trim(),
-      author: $("#currentUser").text(),
       UserId: $("#userId").val()
     };
   
@@ -16,32 +15,32 @@ $("#postBtn").on("click", function(event) {
     // Send an AJAX POST-request with jQuery
     $.post("/api/post", newPost)
       // On success, run the following code
-      .then(function() {
+      .then(function(results) {
   
         let row = $("<div>");
         row.addClass("posts");
   
-        row.append("<p>" + newPost.author + " posted: </p>");
-        row.append("<p>" + newPost.text + "</p>");
-  
-        $("#post-area").prepend(row);
+        row.append(
+          `<section class ="forum">
+        <p class="title">${results.title}</p>
+        <div class="username">${results.title}</div>
+        <div class="post">${results.text}</div>
+        <div class="taskBar">
+            <div class="likes">
+                ${results.likes}
+                <button class="likeBtn">
+                    <img src="https://i.postimg.cc/Zqyx30dD/like.png" alt="Like Icon" class="likeImg">
+                </button>
+            </div>
+        </div>
+        </section>`)
+        console.log(row);
+        $("#postContainer").prepend(row);
       });
   
     // Empty each input box by replacing the value with an empty string
-    $("#author").val("");
-    $("#post-box").val("");
+    $("#newTitle").val("");
+    $("#newPost").val("");
   });
-
-  $.get("/api/allPosts", function(data) {
-
-    if (data.length !== 0) {
-      for (var i = 0; i < data.length; i++) {
-        var row = $("<div>");
-        row.addClass("posts");
-        row.append("<p>" + data[i].author + " posted: </p>");
-        row.append("<p>" + data[i].post + "</p>");
-        $("#post-area").prepend(row);
-      }
-    }
-  });
+;
   
