@@ -61,7 +61,7 @@ header {
   font-weight: 400;
   font-style: normal;
   position: relative;
-  top: 50px;
+  top: 40px;
   font-size: 18px;
   margin-top: 0;
   margin-bottom: 0;
@@ -209,6 +209,11 @@ footer {
   color: black;
 }
 
+#mapdata {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 svg { 
   height: 50vw;
 }
@@ -219,4 +224,9 @@ path {
 
 path:hover { 
   fill: white;
+}
+
+#home {
+  height: 15px;
+  margin :3px
 }

@@ -1,4 +1,7 @@
 /*eslint-disable*/
+$("#currentUser").removeAttr("style");
+$(".userSmall").removeAttr("style");
+
 $("#postBtn").on("click", function(event) {
     event.preventDefault();
   
@@ -23,7 +26,6 @@ $("#postBtn").on("click", function(event) {
         row.append(
           `<section class ="forum">
         <p class="title">${results.title}</p>
-        <div class="username">${results.title}</div>
         <div class="post">${results.text}</div>
         <div class="taskBar">
             <div class="likes">

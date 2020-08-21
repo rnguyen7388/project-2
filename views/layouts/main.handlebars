@@ -17,7 +17,9 @@
         <p id="currentUser" style="display: none" class = "userSmall">@{{user.username}}</p>
         <input id="userId" type="hidden" value="{{user.id}}"/>
         {{!-- current user ^ --}}
-        <p style="display: none"  class = "userSmall">Home: {{user.neighborhood}}</p>
+        <p style="display: none"  class = "userSmall">
+          <img id = "home" src="https://i.postimg.cc/MGHx62gD/69524.png" alt="Home Icon">{{user.neighborhood}}
+        </p>
     </section> 
 </header>
 <body>
