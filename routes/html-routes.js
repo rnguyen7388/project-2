@@ -15,10 +15,24 @@ module.exports = function(app) {
     res.render("signup", { neighborhoods: hoods });
   });
 
-  app.get("/forum", (req, res) => {
+  app.get("/forum/:neighborhood?", (req, res) => {
+    let searchedHood;
+    if(req.params.neighborhood) {
+      searchedHood = req.params.neighborhood;
+    } else if(req.user) {
+      searchedHood = req.user.neighborhood;
+    }
     if (req.user) {
       console.log(req.user)
-      res.render("forum", req.user);
+      db.Post.findAll({
+        where: {
+          neighborhood: searchedHood
+        }
+      }).then(function(results) {
+        console.log(results);
+        res.render("forum", {user: req.user, posts: results, current: searchedHood});
+      });
+
     }
   });
 
@@ -36,11 +50,6 @@ module.exports = function(app) {
   app.get("/forum", isAuthenticated, (req, res) => {
     console.log(req.user)
     res.render("forum", req.user);
-  });
-
-  app.get("/posts", (req, res) => {
-    console.log(req.user)
-    res.render("forum");
   });
 
   app.get("/map", (req, res) => {

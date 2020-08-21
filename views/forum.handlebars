@@ -1,13 +1,3 @@
-<header class="width">
-    <h1 class="notify">Notify</h1>
-    <h2 id="currentNeighborhood" class="neighborhood">{{neighborhood}}</h2>
-    <section id="userInfo">
-        <p id="currentUser" class = "userSmall">@{{username}}</p>
-        <input id="userId" type="hidden" value="{{id}}"/>
-        {{!-- current user ^ --}}
-        <p class = "userSmall">Home: {{neighborhood}}</p>
-    </section> 
-</header>
 <main>
     {{!-- <section id="cityInfo">
     </section> --}}
@@ -19,26 +9,40 @@
     <div class="width createPost">
         <input id="newTitle" class="width" placeholder="Subject"></input>
         <textarea rows="3" class="width" id="newPost" placeholder="What would you like to tell "
-            {{this.neighborhood}}></textarea>
+            {{user.neighborhood}}></textarea>
         <button id="postBtn" type="submit">Post</button>
     </div>
 
     {{!-- post forum posts --}}
-    <section class="width forum">
-        {{#each post}}
-        <p class="title">{{this.title}}</p>
-        <div class="username">@{{this.user}}</div>
-        <div class="post">{{this.text}}</div>
+    <section id="postContainer">
+        {{#each posts}}
+        <section class = " forum">
+        <p class="title">{{this.dataValues.title}}</p>
+        {{!-- <div class="username">@{{this.dataValues.author}}</div> --}}
+        <div class="post">{{this.dataValues.text}}</div>
         <div class="taskBar">
             <div class="likes">
-                {{this.likes}}
+                {{this.dataValues.likes}}
                 <button class="likeBtn">
-                    <img src="/utils/imgs/like.png" alt="Like Icon" class="likeImg">
+                    <img src="https://i.postimg.cc/Zqyx30dD/like.png" alt="Like Icon" class="likeImg">
                 </button>
             </div>
         </div>
+        </section>
         {{/each}}
     </section>
+    {{!-- <section id = "search">
+            <input type="text" id = "
+            searchbar">
+            <div>
+                <p>Commonly Searched</p>
+                <button class = "comSearch"id = "events">#events</button>
+                <button class = "comSearch"id = "garageSale">#garagesale</button>
+                <button class = "comSearch"id = "lostDog">#lostdog</button>
+                <button class = "comSearch"id = "crimeWatch">#crimewatch</button>
+                <button class = "comSearch"id = "freeStuff">#freestuff</button>
+            </div>
+    </section> --}}
 </main>
 <footer>
     <small>All Rights Reserved © 2020</small>

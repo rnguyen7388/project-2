@@ -145,6 +145,8 @@ main {
   border-radius: 10px;
   margin-top: 30px;
   filter: drop-shadow(0 0 0.25rem #d0d0d0);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .username {
@@ -196,9 +198,25 @@ main {
   font-style: normal;
 }
 
+/* #search {
+
+} */
+
 footer {
   text-align: center;
   background-color: white;
   border-top: #0a2470 2px solid;
   color: black;
+}
+
+svg { 
+  height: 50vw;
+}
+
+path { 
+  transition: fill;
+}
+
+path:hover { 
+  fill: white;
 }

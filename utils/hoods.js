@@ -1,22 +1,17 @@
 /*eslint-disable*/
 const neighborhoods = [
-    "Wrigleyville", 
-    "Lakeview", 
-    "Boystown", 
-    "Gold Coast", 
-    "South Loop", 
-    "Evanston",
-    "Pilsen",
     "Albany Park",
-    "Humboldt Park",
-    "North Center",
-    "Lincoln Park",
+    "Dunning",
+    "Edgewater",
+    "Edison Park",
+    "Forest Glen",
+    "Jefferson Park",
+    "North Park",
+    "Norwood Park",
+    "Portage Park",
     "Rogers Park",
-    "Ravenswood",
-    "Chinatown",
-    "West Town",
-    "West Loop",
-    "Wicker Park"
+    "West Ridge",
+    "Uptown"
 ]
 
 module.exports = neighborhoods;

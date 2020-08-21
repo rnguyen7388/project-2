@@ -71,9 +71,9 @@ module.exports = function(app) {
       neighborhood: req.body.neighborhood,
       title: req.body.title,
       text: req.body.text,
-      UserId: req.body.UserId
+      UserId: req.body.UserId,
     }).then(function(results) {
-      res.end();
+      res.send(results);
     });
   });
 };
