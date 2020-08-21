@@ -209,10 +209,14 @@ footer {
   color: black;
 }
 
-svg 
+svg { 
+  height: 50vw;
+}
 
-{ height: 50vw; }
+path { 
+  transition: fill;
+}
 
-path { transition: fill; }
-
-path:hover { fill: white; }
+path:hover { 
+  fill: white;
+}
