@@ -8,46 +8,39 @@ const db = require("../models");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
-    // If the user already has an account send them to the members page
+    // If the user already has an account send them to the forum page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/forum");
     }
     res.render("signup", { neighborhoods: hoods });
   });
 
   app.get("/forum", (req, res) => {
     if (req.user) {
-      db.Post.findAll({
-        where: {
-          neighborhood: req.user.neighborhood
-        }
-      }).then(neighborData => {
-
-        res.render("forum",{
-          city: req.user.neighborhood,
-          home: req.user.neighborhood,
-          post: neighborData
-        } )
-      })
-
+      res.render("forum", req.user);
     }
-  })
+  });
 
   app.get("/login", (req, res) => {
-    // If the user already has an account send them to the members page
+    // If the user already has an account send them to the forum page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/forum");
+      console.log(req.user)
     }
     res.render("login");
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members", isAuthenticated, (req, res) => {
-    res.render("members");
+  app.get("/forum", isAuthenticated, (req, res) => {
+    res.render("forum");
   });
 
   app.get("/posts", (req, res) => {
     res.render("forum");
+  });
+
+  app.get("/map", (req, res) => {
+    res.render("chicago");
   });
 };

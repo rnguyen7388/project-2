@@ -3,9 +3,9 @@ $(document).ready(() => {
   const signUpForm = $("form.signup");
   const emailInput = $("input#email-input");
   const passwordInput = $("input#password-input");
-  const confirmPassInput = $("input#confirmPass-Input")
+  const confirmPassInput = $("input#confirmPass-input");
   const usernameInput = $("input#username-input");
-  const neighborhoodInput = $("input#neighborhood-input")
+  const neighborhoodInput = $("#neighborhood-input");
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", event => {
@@ -14,19 +14,23 @@ $(document).ready(() => {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
       username: usernameInput.val().trim(),
-      neighborhood: neighborhood.val().trim()
+      neighborhood: neighborhoodInput.val()
     };
 
     if (!userData.email || !userData.password) {
       return;
     }
 
-    if (confirmPassInput != passwordInput) {
-      alert("Passwords do not match. Try again.")
+    console.log(confirmPassInput.val());
+    console.log(passwordInput.val());
+    if (confirmPassInput.val() !== passwordInput.val()) {
+      alert("Passwords do not match. Try again.");
+      return;
     }
 
     // If we have an email and password, run the signUpUser function
     signUpUser(userData);
+    console.log(userData);
     emailInput.val("");
     passwordInput.val("");
   });
