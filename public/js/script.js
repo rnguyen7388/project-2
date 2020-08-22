@@ -4,3 +4,4 @@ $("path").click(function() {
 
 $("#currentUser").removeAttr("style");
 $(".userSmall").removeAttr("style");
+$(".navbar-brand").removeAttr("style")

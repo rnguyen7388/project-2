@@ -3,12 +3,13 @@
     </section> --}}
     <div id="button">
         <button id="changeCity"><a href="/map">Change Cities</a></button>
-
     </div>
+  
     {{!-- create forum posts --}}
     <div class="width createPost">
         <input id="newTitle" class="width" placeholder="Subject"></input>
         <textarea rows="3" class="width" id="newPost" placeholder="What would you like to tell "
+        
             {{current}}"?""></textarea>
         <button id="postBtn" type="submit">Post</button>
     </div>
@@ -22,8 +23,9 @@
         <div class="post">{{this.dataValues.text}}</div>
         <div class="taskBar">
             <div class="likes">
-                {{this.dataValues.likes}}
+                {{!-- <span id = "likes">{{this.dataValues.likes}}<span> --}}
                 <button class="likeBtn">
+                    <span id=“likes”>0</span>
                     <img src="https://i.postimg.cc/Zqyx30dD/like.png" alt="Like Icon" class="likeImg">
                 </button>
             </div>
@@ -31,18 +33,6 @@
         </section>
         {{/each}}
     </section>
-    {{!-- <section id = "search">
-            <input type="text" id = "
-            searchbar">
-            <div>
-                <p>Commonly Searched</p>
-                <button class = "comSearch"id = "events">#events</button>
-                <button class = "comSearch"id = "garageSale">#garagesale</button>
-                <button class = "comSearch"id = "lostDog">#lostdog</button>
-                <button class = "comSearch"id = "crimeWatch">#crimewatch</button>
-                <button class = "comSearch"id = "freeStuff">#freestuff</button>
-            </div>
-    </section> --}}
 </main>
 <footer>
     <small>All Rights Reserved © 2020</small>
@@ -54,3 +44,4 @@
 
 <script type="text/javascript" src="js/script.js"></script>
 
+  

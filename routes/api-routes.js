@@ -76,4 +76,22 @@ module.exports = function(app) {
       res.send(results);
     });
   });
+
+   // Route for logging user out
+   app.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
+  }); 
+
+  // app.put(“/api/post”, function(req, res) {
+  //   db.Post.update(req.body,
+  //     {
+  //       where: {
+  //         id: req.body.id
+  //       }
+  //     })
+  //     .then(function(results) {
+  //       res.json(results)
+  //     })
+  // })
 };
